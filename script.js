@@ -32,3 +32,33 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Show back-to-top button when scrolling
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('active');
+    } else {
+        backToTopButton.classList.remove('active');
+    }
+});
+
+// Initialize tooltips
+const techIcons = document.querySelectorAll('.tech-icon[data-tooltip]');
+
+techIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        const tooltip = icon.querySelector('::after');
+        if (tooltip) {
+            tooltip.style.opacity = '1';
+        }
+    });
+    
+    icon.addEventListener('mouseleave', () => {
+        const tooltip = icon.querySelector('::after');
+        if (tooltip) {
+            tooltip.style.opacity = '0';
+        }
+    });
+});
