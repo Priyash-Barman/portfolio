@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyash Barman | Backend Developer</title>
+    <title>Priyash Barman | Full Stack Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Add these inside head tag -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-typescript.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -41,17 +49,24 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h4 class="text-gradient mb-3">Hello, I'm</h4>
-                    <h1 class="display-3 fw-bold mb-4">Priyash Barman</h1>
-                    <h2 class="text-gradient mb-4">Backend Developer</h2>
-                    <p class="lead mb-4">Building scalable web applications and RESTful APIs with Python, Django, and Node.js</p>
-                    <div>
-                        <a href="#contact" class="btn btn-primary btn-lg me-3">Hire Me</a>
-                        <a href="#projects" class="btn btn-outline-dark btn-lg">View Projects</a>
+                <div class="col-lg-6 hero-content reveal-left">
+                    <div class="hero-glass-card">
+                        <h4 class="text-gradient mb-3">Hello, I'm</h4>
+                        <h1 class="display-3 fw-bold mb-4">Priyash Barman</h1>
+                        <h2 class="mb-4">
+                            <span class="text-gradient" id="typing-text">Full Stack Developer</span><span
+                                class="typing-cursor"></span>
+                        </h2>
+                        <p class="lead mb-4 text-light opacity-75">With 2.10+ years of experience building scalable web
+                            applications. Proficient in <strong>Nest.js, Next.js, FastAPI, and
+                                MongoDB/PostgreSQL</strong>.</p>
+                        <div>
+                            <a href="#contact" class="btn btn-primary btn-lg me-3">Hire Me</a>
+                            <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 d-none d-lg-block">
+                <div class="col-lg-6 d-none d-lg-block reveal-right">
                     <div class="code-terminal">
                         <div class="terminal-header">
                             <div class="terminal-buttons">
@@ -59,25 +74,25 @@
                                 <span class="btn yellow"></span>
                                 <span class="btn green"></span>
                             </div>
-                            <div class="terminal-title">backend_api.py</div>
+                            <div class="terminal-title">AppService.ts</div>
                         </div>
                         <div class="terminal-body">
-    <pre><code class="language-python"># Sample API Endpoint
-from fastapi import FastAPI
-from pydantic import BaseModel
+                            <pre><code class="language-typescript">@Injectable()
+export class AppService {
+  constructor(private readonly prisma: PrismaService) {}
 
-app = FastAPI()
-
-class TradeSignal(BaseModel):
-    symbol: str
-    action: str
-    price: float
-
-@app.post("/signals/")
-async def create_signal(signal: TradeSignal):
-    # Process signal with technical indicators
-    return {"status": "success"}</code></pre>
-</div>
+  async getDashboardData(userId: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+      include: { projects: true }
+    });
+    return {
+      status: 'active',
+      data: user
+    };
+  }
+}</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,140 +100,141 @@ async def create_signal(signal: TradeSignal):
     </section>
 
     <!-- About Section -->
-<!-- About Section -->
-<section id="about" class="section-py">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Image Column -->
-            <div class="col-lg-5 mb-4 mb-lg-0 text-center position-relative">
-                <div class="about-image" style="width: 250px; height: 250px; background: #f5f5f5; border-radius: 15px; margin: 0 auto;"></div>
-                
-                <!-- Tech Icons - Now with proper sizing -->
-                <div class="tech-icon" style="top: 20%; left: 10%;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
-                         style="width: 40px; height: 40px;" alt="Python">
-                </div>
-                <div class="tech-icon" style="top: 20%; right: 10%;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" 
-                         style="width: 40px; height: 40px;" alt="Django">
-                </div>
-                <div class="tech-icon" style="bottom: 20%; left: 10%;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
-                         style="width: 40px; height: 40px;" alt="Node.js">
-                </div>
-                <div class="tech-icon" style="bottom: 20%; right: 10%;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" 
-                         style="width: 40px; height: 40px;" alt="AWS">
-                </div>
-            </div>
-            
-            <!-- Content Column -->
-            <div class="col-lg-7">
-                <h2 class="mb-3">About Me</h2>
-                <p class="lead mb-4">I specialize in building scalable backend systems and performant APIs using modern technologies.</p>
-                
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-primary">
-                        <i class="bi bi-code-slash fs-3"></i>
+    <section id="about" class="section-py" style="background-color: white;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Column -->
+                <div class="col-lg-5 mb-4 mb-lg-0 text-center position-relative reveal-left">
+                    <div class="about-image"
+                        style="width: 250px; height: 250px; background: var(--light); border: 1px solid var(--border); border-radius: 24px; margin: 0 auto;">
                     </div>
-                    <div>
-                        <h5>API Development</h5>
-                        <p>Designing RESTful APIs with Django, FastAPI and Node.js</p>
+
+                    <!-- Tech Icons -->
+                    <div class="tech-icon" style="top: 10%; left: 10%;" data-tooltip="Nest.js">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
+                            alt="Nest.js">
+                    </div>
+                    <div class="tech-icon" style="top: 10%; right: 10%;" data-tooltip="Next.js">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                            alt="Next.js">
+                    </div>
+                    <div class="tech-icon" style="bottom: 10%; left: 10%;" data-tooltip="FastAPI">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+                            alt="FastAPI">
+                    </div>
+                    <div class="tech-icon" style="bottom: 10%; right: 10%;" data-tooltip="PostgreSQL">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                            alt="PostgreSQL">
                     </div>
                 </div>
-                
-                <div class="d-flex mb-3">
-                    <div class="me-3 text-primary">
-                        <i class="bi bi-database fs-3"></i>
+
+                <!-- Content Column -->
+                <div class="col-lg-7 reveal-right">
+                    <h2 class="mb-3">About Me</h2>
+                    <p class="lead mb-4">I define myself as a passionate Full Stack Developer dedicated to delivering
+                        end-to-end solutions, optimizing database performance, and writing clean, maintainable code.</p>
+
+                    <div class="d-flex mb-3">
+                        <div class="me-3 text-primary">
+                            <i class="bi bi-layers fs-3"></i>
+                        </div>
+                        <div>
+                            <h5>Full Stack Development</h5>
+                            <p>Building seamless applications with Nest.js, FastAPI (backend) and Next.js (frontend).
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <h5>Database Design</h5>
-                        <p>Optimizing PostgreSQL and MongoDB queries for performance</p>
+
+                    <div class="d-flex mb-3">
+                        <div class="me-3 text-primary">
+                            <i class="bi bi-cpu fs-3"></i>
+                        </div>
+                        <div>
+                            <h5>AI & LLM Integration</h5>
+                            <p>Implementing RAG architectures, vector search, and AI chatbots using Langchain/Langgraph.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="d-flex">
-                    <div class="me-3 text-primary">
-                        <i class="bi bi-cloud fs-3"></i>
-                    </div>
-                    <div>
-                        <h5>Cloud Architecture</h5>
-                        <p>Deploying applications on AWS and Azure infrastructure</p>
+
+                    <div class="d-flex">
+                        <div class="me-3 text-primary">
+                            <i class="bi bi-database-check fs-3"></i>
+                        </div>
+                        <div>
+                            <h5>Database Optimization</h5>
+                            <p>Expertise in MongoDB, PostgreSQL, and Redis caching for high-performance systems.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section-py bg-light">
         <div class="container">
-            <div class="section-header text-center mb-5">
+            <div class="section-header text-center mb-5 reveal">
                 <h2 class="section-title">Technical Skills</h2>
                 <p class="section-subtitle">Technologies I work with</p>
             </div>
-            
+
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.1s;">
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <i class="bi bi-code-square"></i>
+                            <i class="bi bi-server"></i>
                         </div>
-                        <h4>Languages</h4>
+                        <h4>Backend</h4>
                         <ul class="skill-list">
-                            <li>Python</li>
-                            <li>JavaScript/TypeScript</li>
-                            <li>C#</li>
-                            <li>C/C++</li>
-                            <li>Java</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="bi bi-stack"></i>
-                        </div>
-                        <h4>Frameworks</h4>
-                        <ul class="skill-list">
-                            <li>Django</li>
-                            <li>Flask</li>
+                            <li>Nest.js</li>
                             <li>FastAPI</li>
-                            <li>.NET Core</li>
-                            <li>Express.js</li>
-                            <li>React</li>
+                            <li>Node.js/Express</li>
+                            <li>Django</li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="col-md-6 col-lg-3">
+
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.2s;">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="bi bi-window-sidebar"></i>
+                        </div>
+                        <h4>Frontend</h4>
+                        <ul class="skill-list">
+                            <li>Next.js</li>
+                            <li>React.js</li>
+                            <li>TanStack Query</li>
+                            <li>Zustand/Redux</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.3s;">
                     <div class="skill-card">
                         <div class="skill-icon">
                             <i class="bi bi-database"></i>
                         </div>
                         <h4>Databases</h4>
                         <ul class="skill-list">
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                            <li>SQL Server</li>
+                            <li>MongoDB / PostgreSQL</li>
+                            <li>Redis / Kafka</li>
+                            <li>ChromaDB / ClickHouse</li>
+                            <li>Database Optimization</li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="col-md-6 col-lg-3">
+
+                <div class="col-md-6 col-lg-3 reveal" style="transition-delay: 0.4s;">
                     <div class="skill-card">
                         <div class="skill-icon">
-                            <i class="bi bi-gear"></i>
+                            <i class="bi bi-cloud-check"></i>
                         </div>
-                        <h4>DevOps</h4>
+                        <h4>AI & Cloud</h4>
                         <ul class="skill-list">
-                            <li>Docker</li>
-                            <li>AWS</li>
-                            <li>Azure</li>
-                            <li>Git/GitHub</li>
-                            <li>CI/CD</li>
+                            <li>RAG / Langchain</li>
+                            <li>AWS / Azure</li>
+                            <li>Docker / CI-CD</li>
+                            <li>ETL Pipelines</li>
                         </ul>
                     </div>
                 </div>
@@ -229,44 +245,70 @@ async def create_signal(signal: TradeSignal):
     <!-- Experience Section -->
     <section id="experience" class="section-py">
         <div class="container">
-            <div class="section-header text-center mb-5">
+            <div class="section-header text-center mb-5 reveal">
                 <h2 class="section-title">Work Experience</h2>
                 <p class="section-subtitle">My professional journey</p>
             </div>
-            
+
             <div class="timeline">
-                <div class="timeline-item left">
+                <div class="timeline-item left reveal-left">
                     <div class="timeline-badge primary"></div>
                     <div class="timeline-card">
                         <div class="timeline-header">
-                            <h4>Backend Developer</h4>
-                            <h5>0101 Digit All Solutions Pvt. Ltd.</h5>
-                            <span class="badge bg-primary">Dec 2023 - Present</span>
+                            <h4>Full Stack Developer</h4>
+                            <h5>Webskitters Technology Solutions Pvt. Ltd.</h5>
+                            <span class="badge bg-primary">July 2025 - Present</span>
                         </div>
                         <div class="timeline-body">
                             <ul>
-                                <li>Designed and developed scalable RESTful APIs using Django, Flask, FastAPI, Node.js with TypeScript, and .NET Core</li>
-                                <li>Seamlessly integrated React frontends with backend systems for efficient data flow</li>
-                                <li>Collaborated in agile teams to enhance software development lifecycle</li>
-                                <li>Optimized database solutions for improved performance</li>
+                                <li>Building full-stack applications with Nest.js (backend) and Next.js (frontend) using
+                                    MongoDB/PostgreSQL</li>
+                                <li>Implementing Redis caching to reduce database load and improve API response times
+                                </li>
+                                <li>Exposing AI capabilities via FastAPI backend services consumed by Next.js frontends
+                                </li>
+                                <li>Collaborating in Agile sprints to deliver features with zero critical bugs</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
-                <div class="timeline-item right">
+
+                <div class="timeline-item right reveal-right">
+                    <div class="timeline-badge primary"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h4>Full Stack Developer</h4>
+                            <h5>0101 Digit All Solutions Pvt. Ltd.</h5>
+                            <span class="badge bg-primary">Dec 2023 - July 2025</span>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Designed, developed, and maintained scalable RESTful APIs using Node.js, Django, and
+                                    FastAPI with TypeScript</li>
+                                <li>Built real-time features using Kafka and WebSocket for live data streaming and
+                                    instant updates</li>
+                                <li>Built AI chatbot using Langchain/Langgraph with Gemini/Ollama LLMs; implemented RAG
+                                    architecture with vector search</li>
+                                <li>Created ETL pipelines for financial data processing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item left reveal-left">
                     <div class="timeline-badge success"></div>
                     <div class="timeline-card">
                         <div class="timeline-header">
                             <h4>Dotnet Developer (Internship)</h4>
-                            <h5>SeapInfotech</h5>
+                            <h5>Seap Infotech</h5>
                             <span class="badge bg-success">Aug 2023 - Nov 2023</span>
                         </div>
                         <div class="timeline-body">
                             <ul>
-                                <li>Developed backend services using .NET Core and SQL Server</li>
-                                <li>Assisted in debugging and performance optimization</li>
-                                <li>Created technical documentation for project handover</li>
+                                <li>Developed and maintained backend services using .NET Core and Microsoft SQL Server
+                                </li>
+                                <li>Assisted in debugging and performance optimization for enterprise applications</li>
+                                <li>Created technical documentation for seamless handover of projects</li>
                             </ul>
                         </div>
                     </div>
@@ -278,160 +320,143 @@ async def create_signal(signal: TradeSignal):
     <!-- Projects Section -->
     <section id="projects" class="section-py bg-light">
         <div class="container">
-            <div class="section-header text-center mb-5">
+            <div class="section-header text-center mb-5 reveal">
                 <h2 class="section-title">Projects</h2>
                 <p class="section-subtitle">A showcase of my work</p>
             </div>
-            
+
             <div class="row g-4">
                 <!-- Inertia Trade -->
-                <div class="col-lg-6">
+                <div class="col-lg-6 reveal-left">
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-badges">
-                                <span class="badge bg-python">Python</span>
                                 <span class="badge bg-django">Django</span>
+                                <span class="badge bg-next">Next.js</span>
                                 <span class="badge bg-kafka">Kafka</span>
                             </div>
                             <h3>Inertia Trade</h3>
-                            <a href="https://www.inertiatrade.com/" target="_blank" class="project-link"><i class="bi bi-box-arrow-up-right"></i></a>
+                            <a href="https://www.inertiatrade.com/" target="_blank" class="project-link"><i
+                                    class="bi bi-box-arrow-up-right"></i></a>
                         </div>
                         <div class="project-body">
-                            <p>A trading platform delivering real-time forex trade signals based on technical strategies and live market data.</p>
+                            <p>A real-time forex trading platform with historical analysis, subscription management, and
+                                webhook handling for automated billing.</p>
                             <div class="project-features">
                                 <h5>Key Features:</h5>
                                 <ul>
                                     <li>Real-time data integration with Kafka/WebSocket</li>
-                                    <li>Multiple technical indicators (Bollinger Bands, RSI, MACD)</li>
-                                    <li>JWT authentication & Stripe payment integration</li>
+                                    <li>Stripe checkout & subscription management</li>
+                                    <li>Historical analysis & live market signals</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Finsafe -->
-                <div class="col-lg-6">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-badges">
-                                <span class="badge bg-node">Node.js</span>
-                                <span class="badge bg-react">React</span>
-                                <span class="badge bg-aws">AWS</span>
-                            </div>
-                            <h3>Finsafe</h3>
-                            <a href="https://www.finsafe.in/" target="_blank" class="project-link"><i class="bi bi-box-arrow-up-right"></i></a>
-                        </div>
-                        <div class="project-body">
-                            <p>Financial advisory platform offering investment plans, tools, webinars, and expert counseling.</p>
-                            <div class="project-features">
-                                <h5>Key Features:</h5>
-                                <ul>
-                                    <li>Interactive dashboards and financial calculators</li>
-                                    <li>Webinar modules for live financial sessions</li>
-                                    <li>1-on-1 connections with financial advisors</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- MyGopalan -->
-                <div class="col-lg-6">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-badges">
-                                <span class="badge bg-node">Node.js</span>
-                                <span class="badge bg-react">React</span>
-                                <span class="badge bg-aws">AWS</span>
-                            </div>
-                            <h3>MyGopalan</h3>
-                            <a href="https://mygopalan.com/" target="_blank" class="project-link"><i class="bi bi-box-arrow-up-right"></i></a>
-                        </div>
-                        <div class="project-body">
-                            <p>Comprehensive cattle management platform for farmers, vets, and inventory managers.</p>
-                            <div class="project-features">
-                                <h5>Key Features:</h5>
-                                <ul>
-                                    <li>Cattle profiling system</li>
-                                    <li>Task and inventory management</li>
-                                    <li>E-commerce with PhonePe integration</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 121Captions -->
-                <div class="col-lg-6">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-badges">
-                                <span class="badge bg-dotnet">.NET Core</span>
-                                <span class="badge bg-postgres">PostgreSQL</span>
-                                <span class="badge bg-react">React</span>
-                            </div>
-                            <h3>121Captions</h3>
-                            <a href="https://www.121captions.com/" target="_blank" class="project-link"><i class="bi bi-box-arrow-up-right"></i></a>
-                        </div>
-                        <div class="project-body">
-                            <p>CRM platform offering live captioning services for the hearing-impaired community.</p>
-                            <div class="project-features">
-                                <h5>Key Features:</h5>
-                                <ul>
-                                    <li>Live captioning services</li>
-                                    <li>Task management with calendar</li>
-                                    <li>Project and personal chat</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+
                 <!-- Finsafe Chatbot -->
-                <div class="col-lg-6">
+                <div class="col-lg-6 reveal-right">
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-badges">
-                                <span class="badge bg-python">Python</span>
                                 <span class="badge bg-fastapi">FastAPI</span>
-                                <span class="badge bg-ai">AI</span>
+                                <span class="badge bg-next">Next.js</span>
+                                <span class="badge bg-ai">AI / RAG</span>
                             </div>
                             <h3>Finsafe Chatbot</h3>
                         </div>
                         <div class="project-body">
-                            <p>AI-powered financial chatbot to assist users with financial queries and personalized advice.</p>
+                            <p>AI-powered financial assistant with vector search, RAG, and fine-tuning for semantic
+                                retrieval and context-aware responses.</p>
                             <div class="project-features">
                                 <h5>Key Features:</h5>
                                 <ul>
-                                    <li>RAG and vector similarity search</li>
-                                    <li>Multiple LLM integration (Ollama, Gemini)</li>
-                                    <li>User feedback tracking</li>
+                                    <li>Langchain/Langgraph integration</li>
+                                    <li>Vector similarity search with ChromaDB</li>
+                                    <li>Integration with Gemini/Ollama LLMs</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Sagar Services -->
-                <div class="col-lg-6">
+
+                <!-- Finsafe -->
+                <div class="col-lg-6 reveal-left">
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-badges">
-                                <span class="badge bg-python">Python</span>
-                                <span class="badge bg-flask">Flask</span>
-                                <span class="badge bg-postgres">PostgreSQL</span>
+                                <span class="badge bg-node">Node.js</span>
+                                <span class="badge bg-next">Next.js</span>
+                                <span class="badge bg-mongodb">MongoDB</span>
                             </div>
-                            <h3>Sagar Services</h3>
+                            <h3>Finsafe</h3>
+                            <a href="https://www.finsafe.in/" target="_blank" class="project-link"><i
+                                    class="bi bi-box-arrow-up-right"></i></a>
                         </div>
                         <div class="project-body">
-                            <p>Platform for managing computer and laptop services with appointment booking and product sales.</p>
+                            <p>Financial advisory platform offering investment tools, financial calculators, webinars,
+                                and expert counseling.</p>
                             <div class="project-features">
                                 <h5>Key Features:</h5>
                                 <ul>
-                                    <li>Service appointment booking</li>
-                                    <li>E-commerce functionality</li>
-                                    <li>Real-time support chat</li>
+                                    <li>Interactive financial tools & calculators</li>
+                                    <li>Webinar modules for live sessions</li>
+                                    <li>Expert connection system</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MyGopalan -->
+                <div class="col-lg-6 reveal-right">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-badges">
+                                <span class="badge bg-mongodb">MERN</span>
+                                <span class="badge bg-react">React</span>
+                            </div>
+                            <h3>MyGopalan</h3>
+                            <a href="https://mygopalan.com/" target="_blank" class="project-link"><i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                        <div class="project-body">
+                            <p>Cattle management system with modules for tasks, inventory, and e-commerce with PhonePe
+                                integration.</p>
+                            <div class="project-features">
+                                <h5>Key Features:</h5>
+                                <ul>
+                                    <li>Inventory & Task management</li>
+                                    <li>Animal profiling & vet modules</li>
+                                    <li>Full E-commerce functionality</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 121Captions -->
+                <div class="col-lg-6 reveal-left">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-badges">
+                                <span class="badge bg-dotnet">.NET Core</span>
+                                <span class="badge bg-postgres">Postgres</span>
+                                <span class="badge bg-react">React</span>
+                            </div>
+                            <h3>121Captions</h3>
+                            <a href="https://www.121captions.com/" target="_blank" class="project-link"><i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                        <div class="project-body">
+                            <p>Inclusive CRM platform for the hearing-impaired, providing live captioning, chat, and
+                                task management.</p>
+                            <div class="project-features">
+                                <h5>Key Features:</h5>
+                                <ul>
+                                    <li>Live captioning service integration</li>
+                                    <li>RBAC & Secure task management</li>
+                                    <li>Project-based real-time chat</li>
                                 </ul>
                             </div>
                         </div>
@@ -442,78 +467,84 @@ async def create_signal(signal: TradeSignal):
     </section>
 
     <!-- Contact Section -->
-<section id="contact" class="section-py">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's work together</p>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <div class="contact-info p-5">
-                    <h3 class="mb-4">Contact Information</h3>
-                    <p class="mb-5">Feel free to reach out for collaborations or just to say hello!</p>
-                    
-                    <div class="contact-method">
-                        <div class="method-item mb-4">
-                            <div class="method-icon mx-auto">
-                                <i class="bi bi-envelope"></i>
+    <section id="contact" class="section-py">
+        <div class="container reveal">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="contact-info p-5">
+                        <h3 class="mb-4">Contact Information</h3>
+                        <p class="mb-5">Feel free to reach out for collaborations or just to say hello!</p>
+
+                        <div class="contact-method">
+                            <div class="method-item mb-4">
+                                <div class="method-icon mx-auto">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="method-content mt-3">
+                                    <h5>Email</h5>
+                                    <a href="mailto:priyashbarman9@gmail.com"
+                                        class="text-primary">priyashbarman9@gmail.com</a>
+                                </div>
                             </div>
-                            <div class="method-content mt-3">
-                                <h5>Email</h5>
-                                <a href="mailto:priyashbarman9@gmail.com" class="text-primary">priyashbarman9@gmail.com</a>
+
+                            <div class="method-item mb-4">
+                                <div class="method-icon mx-auto">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <div class="method-content mt-3">
+                                    <h5>Phone</h5>
+                                    <a href="tel:+919563777346" class="text-primary">+91 95637 77346</a>
+                                </div>
+                            </div>
+
+                            <div class="method-item mb-4">
+                                <div class="method-icon mx-auto">
+                                    <i class="bi bi-linkedin"></i>
+                                </div>
+                                <div class="method-content mt-3">
+                                    <h5>LinkedIn</h5>
+                                    <a href="https://linkedin.com/in/priyash-barman-3345b9209" target="_blank"
+                                        class="text-primary">priyash-barman-3345b9209</a>
+                                </div>
+                            </div>
+
+                            <div class="method-item">
+                                <div class="method-icon mx-auto">
+                                    <i class="bi bi-github"></i>
+                                </div>
+                                <div class="method-content mt-3">
+                                    <h5>GitHub</h5>
+                                    <a href="https://github.com/Priyash-Barman" target="_blank"
+                                        class="text-primary">Priyash-Barman</a>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="method-item mb-4">
-                            <div class="method-icon mx-auto">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                            <div class="method-content mt-3">
-                                <h5>Phone</h5>
-                                <a href="tel:+919563777346" class="text-primary">+91 95637 77346</a>
-                            </div>
+
+                        <div class="social-links mt-5">
+                            <a href="https://linkedin.com/in/priyash-barman-3345b9209" target="_blank"
+                                class="social-icon mx-3"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/Priyash-Barman" target="_blank" class="social-icon mx-3"><i
+                                    class="bi bi-github"></i></a>
+                            <a href="mailto:priyashbarman9@gmail.com" class="social-icon mx-3"><i
+                                    class="bi bi-envelope"></i></a>
                         </div>
-                        
-                        <div class="method-item mb-4">
-                            <div class="method-icon mx-auto">
-                                <i class="bi bi-linkedin"></i>
-                            </div>
-                            <div class="method-content mt-3">
-                                <h5>LinkedIn</h5>
-                                <a href="https://linkedin.com/in/priyash-barman-3345b9209" target="_blank" class="text-primary">priyash-barman-3345b9209</a>
-                            </div>
-                        </div>
-                        
-                        <div class="method-item">
-                            <div class="method-icon mx-auto">
-                                <i class="bi bi-github"></i>
-                            </div>
-                            <div class="method-content mt-3">
-                                <h5>GitHub</h5>
-                                <a href="https://github.com/Priyash-Barman" target="_blank" class="text-primary">Priyash-Barman</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links mt-5">
-                        <a href="https://linkedin.com/in/priyash-barman-3345b9209" target="_blank" class="social-icon mx-3"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://github.com/Priyash-Barman" target="_blank" class="social-icon mx-3"><i class="bi bi-github"></i></a>
-                        <a href="mailto:priyashbarman9@gmail.com" class="social-icon mx-3"><i class="bi bi-envelope"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2025 Priyash Barman. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2026 Priyash Barman. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-links">
@@ -535,4 +566,5 @@ async def create_signal(signal: TradeSignal):
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
